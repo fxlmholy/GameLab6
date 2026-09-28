@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8dancer0001"]
+
+[ext_resource type="Script" path="res://scripts/dancer.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://character/character.glb" id="2_char"]
+
+[node name="Dancer" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="Character" parent="." instance=ExtResource("2_char")]

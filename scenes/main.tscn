@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://b8main00001"]
+
+[ext_resource type="PackedScene" uid="uid://b8dancer0001" path="res://scenes/dancer.tscn" id="1_dancer"]
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0.05, 0.75, 0.93, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+
+[sub_resource type="StandardMaterial3D" id="Green"]
+albedo_color = Color(0.55, 0.9, 0.45, 1)
+
+[sub_resource type="BoxMesh" id="GroundMesh"]
+material = SubResource("Green")
+size = Vector3(9, 0.3, 8)
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.55, 0.35, 0.2, 1)
+
+[sub_resource type="CylinderMesh" id="TrunkMesh"]
+material = SubResource("Wood")
+top_radius = 0.15
+bottom_radius = 0.18
+height = 0.8
+radial_segments = 6
+
+[sub_resource type="StandardMaterial3D" id="Leaf"]
+albedo_color = Color(0.78, 0.93, 0.35, 1)
+
+[sub_resource type="CylinderMesh" id="LeafMesh"]
+material = SubResource("Leaf")
+top_radius = 0.0
+bottom_radius = 1.0
+height = 1.6
+radial_segments = 6
+rings = 1
+
+[node name="Main" type="Node3D" unique_id=1670054449]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=649072787]
+environment = SubResource("Env")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1681723827]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 6, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=745745944]
+transform = Transform3D(1, 0, 0, 0, 0.906, 0.423, 0, -0.423, 0.906, 0, 3.4, 6)
+fov = 50.0
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=661567731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.8)
+mesh = SubResource("GroundMesh")
+
+[node name="Tree1" type="Node3D" parent="." unique_id=642866538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3.6)
+
+[node name="Trunk" type="MeshInstance3D" parent="Tree1" unique_id=849845638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("TrunkMesh")
+
+[node name="Leaves1" type="MeshInstance3D" parent="Tree1" unique_id=1573466979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Leaves2" type="MeshInstance3D" parent="Tree1" unique_id=1348074383]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.2, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Tree2" type="Node3D" parent="." unique_id=1918338614]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.6, 0, -3.9)
+
+[node name="Trunk" type="MeshInstance3D" parent="Tree2" unique_id=530763439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("TrunkMesh")
+
+[node name="Leaves1" type="MeshInstance3D" parent="Tree2" unique_id=1782335748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Leaves2" type="MeshInstance3D" parent="Tree2" unique_id=1348273205]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.2, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Tree3" type="Node3D" parent="." unique_id=1125138099]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 3, 0, -3.2)
+
+[node name="Trunk" type="MeshInstance3D" parent="Tree3" unique_id=609855907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("TrunkMesh")
+
+[node name="Leaves1" type="MeshInstance3D" parent="Tree3" unique_id=1989126509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Leaves2" type="MeshInstance3D" parent="Tree3" unique_id=1739210125]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.2, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Tree4" type="Node3D" parent="." unique_id=1365659889]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.4, 0, -1)
+
+[node name="Trunk" type="MeshInstance3D" parent="Tree4" unique_id=1255177259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("TrunkMesh")
+
+[node name="Leaves1" type="MeshInstance3D" parent="Tree4" unique_id=601745762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Leaves2" type="MeshInstance3D" parent="Tree4" unique_id=401248775]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.2, 0)
+mesh = SubResource("LeafMesh")
+
+[node name="Dancer1" parent="." unique_id=1339848491 instance=ExtResource("1_dancer")]
+transform = Transform3D(0.9063, 0, -0.4226, 0, 1, 0, 0.4226, 0, 0.9063, -2.2, 0, 0.6)
+animation_name = "MeleeLib/Slash1"
+
+[node name="Dancer2" parent="." unique_id=377733948 instance=ExtResource("1_dancer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4)
+animation_name = "ShooterLib/kick1"
+
+[node name="Dancer3" parent="." unique_id=338564242 instance=ExtResource("1_dancer")]
+transform = Transform3D(0.9063, 0, 0.4226, 0, 1, 0, -0.4226, 0, 0.9063, 2.2, 0, 0.6)
+animation_name = "MeleeLib/HeavyUppercut"
